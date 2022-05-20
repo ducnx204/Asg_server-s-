@@ -1,0 +1,48 @@
+{{#each products}}
+<a href="/xemchitiet/{{this._id}}" style="text-decoration: none;">
+	<div class="card col-2" style="width: 18rem; margin: 15px; border-radius: 10px; box-shadow: 1px;">
+		<div class="row" style="margin-left: 3px;">
+			<span class="badge badge-info" style="width: 70ox;margin-top: 10px;">Trả Góp {{this.tragop}}%</span>
+
+			{{!--
+			<div style="margin-top: 5px; margin-left: 20px;" class="row">
+				<a href="/update-product/{{this._id}}"
+					onclick="return confirm('Bạn Có Muốn Sửa Không? \n Tên Sản Phẩm Bạn Muốn Sửa Là:{{this.name}}')"
+					style="margin-right: 1px;" class="btn btn-outline-primary"> <span class="glyphicon glyphicon-list-alt
+										" /></a>
+				<a href="/del-product/{{this._id}}"
+					onclick="return confirm('Bạn Có Muốn Xóa Không ?\n Tên Sản Phẩm Bạn Muốn Xóa Là: {{this.name}}')"
+					style=" margin-left: 1px;" class="btn btn-outline-danger"> <span class="glyphicon glyphicon-trash
+									" /> </a>
+			</div> --}}
+		</div>
+
+		<img class="card-img-top" style=" width: 150px; height: 140px; margin-top: 10px;"
+			src="http://localhost:3001/images/products/{{this.image}}" alt="Card image cap">
+
+		<div class="card-body">
+			<div style="font-size: 12px; color: black;margin-left: 5px;" class="row">
+				<h8>{{this.name}}</h8>
+				<div style=" margin-left: 5px;">{{this.ram}} GB
+				</div>
+			</div>
+			<div class="row " style="font-size: 18px; color: red;margin-left: 5px;">
+				<strong>{{this.price1}} ₫</strong>
+			</div>
+
+			<div style="margin-top: 10px; margin-left: 10px;" class="row">
+				<a href="/update-product/{{this._id}}"
+					onclick="return confirm('Bạn Có Muốn Sửa Không? \n Tên Sản Phẩm Bạn Muốn Sửa Là:{{this.name}}')"
+					style="margin-right: 5px;" class="btn btn-outline-primary"> <span class="glyphicon glyphicon-list-alt
+						" /></a>
+				<a href="/del-product/{{this._id}}"
+					onclick="return confirm('Bạn Có Muốn Xóa Không ?\n Tên Sản Phẩm Bạn Muốn Xóa Là: {{this.name}}')"
+					style=" margin-left: 5px;" class="btn btn-outline-danger"> <span class="glyphicon glyphicon-trash
+					" /> </a>
+			</div>
+
+		</div>
+	</div>
+
+</a>
+{{/each}}

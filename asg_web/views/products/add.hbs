@@ -1,0 +1,131 @@
+<script type="text/javascript">
+    var cateSelect = document.getElementsByName('category');
+    var cate = document.getElementsByName("categoryH");
+    function setCategory(value) {
+        alert(cateSelect.forEach.length);
+        cateSelect.length
+    }
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>ction chooseFile(fileInput) {
+        if (fileInput.files && fileInput.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#image').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(fileInput.files[0]);
+        }
+    }
+</script>
+
+<div class="shadow-lg p-3 mb-5 container bg-white rounded border" style="margin-top: 40px;">
+
+    <form action="/add-product" method="POST" style="background-color: white;padding: 30px;"
+        enctype="multipart/form-data" autocomplete="off">
+        <label>
+            <h4>{{viewTitle}}</h4>
+        </label>
+
+        <input type="hidden" name="id" value="{{pro._id}}" required="">
+        <div class="form-row">
+            <div class="form-group col-sm-6">
+                <label for="">Danh Mục</label>
+                <input type="text" class="form-control" onclick="setCategory(this.value)" name="categoryH"
+                    value="{{pro.category}}">
+            </div>
+            <div class="form-group col-sm-6">
+                <label for="">Thương Hiệu</label>
+
+                <input type="text" name="brandH" onclick="setCategory(this.value)" value="{{pro.brand}}"
+                    class="form-control">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="">Tên sản phẩm</label>
+            <input type="text" name="name" value="{{pro.name}}" class="form-control" placeholder="Tên Sản Phẩm"
+                required="">
+        </div>
+        <div class="form-row">
+            <div class="col-6">
+                <label for="">Danh Mục</label>
+                <select name="category">
+                    <option value="Điện thoại thông minh">Điện thoại thông minh</option>
+                    <option value="Máy tính xách tay">Máy tính xách tay</option>
+                    <option value="Đồng hồ thông minh">Đồng hồ thông minh</option>
+                    <option value="Loa bluetooth">Loa bluetooth</option>
+                    <option value="Tai nghe bluetooth">Tai nghe bluetooth</option>
+                    <option value="Pin sạc dự phòng">Pin sạc dự phòng</option>
+                </select>
+            </div>
+            <div class="col-6">
+                <label for="">Thương Hiệu</label>
+                <select name="brand" value="{{pro.brand}}">
+                    <option value="Samsung" selected="selected">Samsung</option>
+                    <option value="Apple">Apple</option>
+                    <option value="Oppo">Oppo</option>
+                    <option value="Sony">Sony</option>
+                    <option value="Nokia">Nokia</option>
+                    <option value="Xiaomi">Xiaomi</option>
+                    <option value="Realme">Realme</option>
+                    <option value="JBL">JBL</option>
+                    <option value="BeU">BeU</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="">Mô tả</label>
+            <input type="text" name="description" value="{{pro.description}}" class="form-control" placeholder="Mô Tả"
+                required="">
+        </div>
+        <div class="form-row">
+            <div class="form-group col-sm-6">
+                <label for="">Giá gốc</label>
+                <input type="number" name="price0" value="{{pro.price0}}" class="form-control" placeholder="Giá Gốc"
+                    required="">
+            </div>
+            <div class="form-group col-sm-6">
+                <label for="">Giá Bán</label>
+                <input type="number" name="price1" value="{{pro.price1}}" class="form-control" placeholder="Giá Bán"
+                    required="">
+            </div>
+        </div>
+
+        {{!-- ram ssd --}}
+        <div class="form-row">
+            <div class="form-group col-sm-4">
+                <label for="">Trả Góp</label>
+                <input type="number" name="tragop" value="{{pro.tragop}}" class="form-control" placeholder="Trả Góp"
+                    required="">
+            </div>
+            <div class="form-group col-sm-4">
+                <label for="">Ram</label>
+                <input type="number" name="ram" value="{{pro.ram}}" class="form-control" placeholder="Ram" required="">
+            </div>
+            <div class="form-group col-sm-4">
+                <label for="">SSD</label>
+                <input type="number" name="ssd" value="{{pro.ssd}}" class="form-control" placeholder="SDD" required="">
+            </div>
+        </div>
+
+        {{!-- ram ssd --}}
+
+        <div class="form-group">
+            <label for="">Hình Ảnh</label><br>
+            <input id="imageFile" class="form-control" type="file" name="image" accept="image/gif,image/jpeg,image/png"
+                onchange="chooseFile(this)">
+            <input type="hidden" value="{{pro.image}}"></input>
+            {{!--
+            <img class="card-img-top" style="padding: 15px; background-color: ;"
+                src="http://localhost:3001/images/products/{{pro.image}}" alt="Card image cap"> --}}
+        </div>
+
+
+
+        <div class="form-group">
+            <button type="submit" style="margin-left: 120px; width: 200px;" class="btn btn-info">Lưu</button>
+        </div>
+    </form>
+
+</div>

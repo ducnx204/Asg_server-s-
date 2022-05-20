@@ -1,0 +1,39 @@
+<div style="margin-bottom: 65px;">
+    <form style="background-color: white; height: 350px; width: 700px; margin-left: 250px;border-radius: 20px;">
+
+        <div style="margin-right:100px; margin-top: 10px;">
+
+            <h4 style="text-align: center; margin-top: 10px;font-size: 35px; margin-left: 90px;">Chi Tiết Sản Phẩm</h4>
+
+            <input type="hidden" name="id" value="{{pro._id}}" required="">
+            <div class="form-group col-sm-12 row" style="margin-top: 20px;">
+                <div class="form-group" style="width: 150px; margin-top: 60px;margin-left: 10px;">
+                    <img class="card-img-top" src="http://localhost:3001/images/products/{{pro.image}}"
+                        alt="Card image cap">
+                </div>
+
+                <div class="form-group" style="margin-left: 10px;">
+
+                    <a style="padding-left: 10px;">Tên Sản Phẩm: </a> <a style="margin-left: 5px;">{{pro.name}}</a>
+                    <br>
+                    <a style="padding-left: 10px;">Danh Muc: </a> <a style="margin-left: 5px;">{{pro.category}}</a>
+                    <br>
+                    <a style="padding-left: 10px;">Thương Hiệu: </a> <a style="margin-left: 5px;">{{pro.brand }}</a>
+                    <br>
+                    <a style="padding-left: 10px;">Giá Góc: </a> <a style="margin-left: 5px;">{{pro.price0 }} VND</a>
+                    <br>
+                    <a style="padding-left: 10px;">Giá Bán: </a> <a style="margin-left: 5px;">{{pro.price1 }} VND</a>
+                    <br>
+                    <a style="padding-left: 10px;">Trả Góp: </a> <a style="margin-left: 5px;">{{pro.tragop }} %</a>
+                    <br>
+                    <a style="padding-left: 10px;">Ram:</a> <a style="margin-left: 5px;">{{pro.ram }} GB</a>
+                    <br>
+                    <a style="padding-left: 10px;">Bộ Nhớ Trong:</a> <a style="margin-left: 5px;">{{pro.ssd}} GB</a>
+                    <br>
+                    <a style="padding-left: 10px;">Mô Tả: </a> <a style="margin-left: 5px;">{{pro.description }}</a>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
